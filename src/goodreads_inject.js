@@ -73,13 +73,15 @@ function sortRowsByStatus() {
 }
 
 // for title and author remove parentheticals, remove [&|,], and trim whitespace
+// for title and author remove parentheticals, remove [&|,], and trim whitespace
 function cleanTitleForSearch(title) {
-	return title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
+    console.log(title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' '));
+    return title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
 }
 function cleanAuthorForSearch(author) {
-	return author.replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/(?:^|\W)(?:[A-Z]\.)+/g, ' ').replace(/[ ]+/, ' ');
+    console.log( author.replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/(?:^|\W)(?:[A-Z]\.)+/g, ' ').replace(/[ ]+/, ' '));
+    return author.replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/(?:^|\W)(?:[A-Z]\.)+/g, ' ').replace(/[ ]+/, ' ');
 }
-
 function onClickShowMore(id) {
 	return function (event) {
 		event.preventDefault();
@@ -99,6 +101,7 @@ function onClickShowMore(id) {
 }
 
 function createSingleBookPageTable(headerText, id) {
+	console.log('createSingleBookPageTable');
 	return `<div id='AGtable' style='position:relative'>
 <div class='ARcontainer'>
 <b>Availability on ${headerText}:</b>\
@@ -137,6 +140,11 @@ function getOverdriveAvailability() {
 	var booklist2 = document.querySelectorAll('table.tableList tr');
 	var bookshelves = document.querySelectorAll('div#shelvesSection');
 
+	console.log(book);
+	console.log(booklist);
+	console.log(booklist2);
+	console.log(bookshelves);
+
 	var headerText = "Libby";
 	if (showFormat.linkToOverdriveResults) {
 		headerText = "Overdrive";
@@ -167,6 +175,7 @@ function getOverdriveAvailability() {
 		});
 	} else if (showOnPages["listPage"] && booklist && booklist.length > 0) { // else if on a book list page
 		booklist.forEach((element) =>  {
+			console.log("Booklist");
 			//element.querySelector(".objectLockupContent__secondary").classList.add("AGloading");
 			const id = element.querySelector('a').getAttribute("href").replace(/[^a-zA-Z0-9]/g,'');
 			const title = element.querySelector('a.gr-h3').textContent;
@@ -192,7 +201,9 @@ function getOverdriveAvailability() {
 			});
 		});	
 	} else if (showOnPages["listPage"] && booklist2 && booklist2.length > 0) { // else if on a book list page
+		
 		booklist2.forEach((element) =>  {
+			console.log("Booklist2");
 			//element.querySelector("div a.gr-button").classList.add("AGloading");
 			const id = element.querySelector('a.bookTitle').getAttribute("href").replace(/[^a-zA-Z0-9]/g,'');
 			const title = element.querySelector('a.bookTitle').textContent;
@@ -219,6 +230,8 @@ function getOverdriveAvailability() {
 		});
 	} else if (showOnPages["shelfPage"] && bookshelves && bookshelves.length > 0) { // else if on my book shelf page
 		// inject the table column we're going to populate
+		console.log("bookshelves");
+
 		if (!document.querySelector("th.overdrive")) {
 			document.querySelector("th.avg_rating").insertAdjacentHTML("afterend", 
 			'<th class="header field overdrive"><a href="#" id=AGsort>on ' + headerText.toLowerCase() + '</a></th>');

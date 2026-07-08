@@ -3,6 +3,7 @@
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   switch (message.type) {
     case 'FROM_AG_PAGE':
+      console.log("SEND MESSAGE")
       searchOverdrive({
         messageId: message.id,
         title: message.title,
@@ -85,6 +86,7 @@ function createSearchUrls(library, libraryShortName, requestInfo, showFormat) {
 }
 
 function searchOverdrive(requestInfo) {
+  console.log("search OVerdrive")
   // load strings for different libraries
   chrome.storage.sync.get(null, async function(obj) {
     var libraries = obj.libraries;

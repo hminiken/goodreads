@@ -1,0 +1,137 @@
+#AGtable a {
+    text-decoration: none;
+}
+
+.ARcontainer {
+    position: relative
+}
+
+.AGcol {
+    position: relative
+}
+
+.ARSingleoneLine {
+    max-width: 700px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.ARListoneLine {
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.ARShelfoneLine {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+div img.AGaudio {
+    margin-left: 5px;
+    margin-bottom: 1px
+}
+
+span img.AGaudio {
+    margin-left: -1px;
+    margin-right: 3px;
+    margin-bottom: 1px
+}
+
+.AGline {
+    display: none;
+}
+
+font:hover hr.AGline {
+    margin-left: 5px;
+    border: thin solid #c6c8c9;
+    position: absolute;
+    display: inline
+}
+
+.AGtitle {
+    display: none;
+}
+
+.ARimg {
+    text-wrap: nowrap;
+    padding: 0px;
+    display: block;
+}
+
+font:hover span.AGtitle {
+    z-index: 999;
+    background-color: white;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline;
+    border: thin solid #c6c8c9
+}
+
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: flipv;
+    /*IE*/
+    filter: flipv;
+}
+
+.ARshowMoreInSinglePage {
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+    height: auto;
+    background: white;
+    padding-right: 0px
+}
+
+.ARshowMoreInList {
+    padding: 3px;
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+    height: auto;
+    background: white;
+}
+
+.ARshowMoreInShelf {
+    height: auto;
+}
+
+.ARhidden {
+    display: none
+}
+
+.ARclicked {
+    display: none
+}
+
+.ARresultstatus {
+    white-space: nowrap
+}
+
+.ARfade {
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+    mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+}
+
+.ARsmaller {
+    font-size: 80%
+}
+
+.ARdesc {
+    text-align: left;
+    padding-left: 1px;
+}
+
+.ARrow {
+    display: flex;
+}
+
+

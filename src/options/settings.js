@@ -140,7 +140,7 @@ function updateShowFormatOptions() {
 		showFormat = obj["showFormat"];
 		if (!showFormat || Object.keys(showFormat).length === 0) {
 			showFormat = {
-				limitResultCount: 5,
+				limitResultCount: 3,
 				linkToOverdriveResults: false,
 				audioBook: true,
 				eBook: true,
