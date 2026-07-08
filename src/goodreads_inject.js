@@ -473,7 +473,7 @@ function parseResultsMessage(message, sender, sendResponse) {
 	const hideNotFoundIfOtherResults = message.hideNotFoundIfOtherResults;
 
 	if (!message || !message.searchUrls || message.searchUrls === undefined) {
-		console.log(message);
+		return;
 	}
 	var resultsUrl = message.searchUrls.libby;
 	if (showFormat.linkToOverdriveResults) {

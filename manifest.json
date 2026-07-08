@@ -66,7 +66,8 @@
     "host_permissions": [
       "*://www.goodreads.com/*",
       "*://*.overdrive.com/*",
-      "*://*.thestorygraph.com/*"
+      "*://*.thestorygraph.com/*",
+      "*://books.hillaryminiken.com/*"
     ],
     "browser_specific_settings": {
       "gecko": {
